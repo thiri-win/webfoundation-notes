@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .site-nav-item {
+        @apply uppercase p-2 inline-block border border-red-500;
+    }
+    html {
+        @apply font-body;
+    }
+    h1,h2,h3,h4,h5,h6 {
+        @apply font-heading;
+    }
+    section > h1 {
+        @apply text-2xl font-bold py-3;
+    }
+    section > h2 {
+        @apply text-gray-600 text-xl italic pt-1 pb-2;
+    }
+    section > h3 {
+        @apply font-extrabold;
+    }
+    p {
+        @apply text-justify;
+    }
+    section ol li {
+        @apply list-decimal list-inside;
+    }
+    section ul li {
+        @apply list-disc list-inside;
+    }
+    table {
+        @apply border-separate border border-blue-400 my-1;
+    }
+    td, th {
+        @apply border border-blue-300 p-1;
+    }
+    menu li {
+        @apply italic font-light; 
+    }
+    #scrollspy1 > ul > li > ul {
+        @apply ml-6 italic;
+    }
+    pre {
+        @apply bg-slate-200 whitespace-break-spaces pl-0;
+    }
+    footer {
+        @apply h-20 bg-red-400 flex justify-center items-center;
+    }
+}
+

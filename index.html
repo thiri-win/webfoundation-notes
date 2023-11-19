@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Foundation</title>
+
+    <!-- tailwindcss -->
+    <link rel="stylesheet" href="dist/main.css">
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+    <script>
+        hljs.highlightAll();
+    </script>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="fixed left-0 right-0 top-0 z-10">
+        <nav
+            class="flex-no-wrap relative flex w-full items-center justify-between bg-[#FBFBFB] py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4">
+            <div class="flex w-full flex-wrap items-center justify-between px-3">
+                <!-- Hamburger button for mobile view -->
+                <button
+                    class="block border-0 bg-transparent px-2 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
+                    type="button" data-te-collapse-init data-te-target="#navbarSupportedContent1"
+                    aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- Hamburger icon -->
+                    <span class="[&>svg]:w-7">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7">
+                            <path fill-rule="evenodd"
+                                d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </span>
+                </button>
+
+                <!-- Collapsible navigation container -->
+                <div class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
+                    id="navbarSupportedContent1" data-te-collapse-item>
+                    <!-- Logo -->
+                    <a class="mb-4 ml-2 mr-5 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
+                        href="#">
+                        <img src="https://tecdn.b-cdn.net/img/logo/te-transparent-noshadows.webp" style="height: 15px"
+                            alt="TE Logo" loading="lazy" />
+                    </a>
+                    <!-- Left navigation links -->
+                    <ul class="list-style-none ml-auto flex flex-col pl-0 lg:flex-row" data-te-navbar-nav-ref>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
+                                href="index.html" data-te-nav-link-ref>Home</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="hypertext.html" data-te-nav-link-ref>HTML</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="cascading.html" data-te-nav-link-ref>CSS</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="javascript.html" data-te-nav-link-ref>Javascript</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="jquery.html" data-te-nav-link-ref>JQuery</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="bootstrap.html" data-te-nav-link-ref>Bootstrap</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="tailwind.html" data-te-nav-link-ref>Tailwindcss</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="alpine.html" data-te-nav-link-ref>Alpinejs</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- main -->
+    <main class="grid grid-cols-12" id="app">
+        <div class="col-span-9">
+            <div data-te-spy="scroll" data-te-target="#scrollspy1" data-te-offset="100"
+                class="relative overflow-auto h-screen scroll-pt-14">
+                <div class="px-8 pt-14 pb-8 ">
+
+                    <section id="howtheinternetwork">
+                        <h1>How the internet work</h1>
+                        <p>
+                            There are two main concepts that are fundamental to the way the Internet functions: packets
+                            and
+                            protocols.
+                        </p>
+                        <section id="packets">
+                            <h2>Packets</h2>
+                            <p>
+                                In networking, a packet is a small segment of a larger message. Each packet contains
+                                both
+                                data and information about that data. When data gets sent over the Internet, it is first
+                                broken up into smaller packets, which are then translated into bits. Packets are sent
+                                across
+                                the Internet using a technique called packet switching. Intermediary routers and
+                                switches
+                                are able to process packets independently from each other, without accounting for their
+                                source or destination.
+                            </p>
+                        </section>
+                        <section id="protocols">
+                            <h2>Protocols</h2>
+                            <p>
+                                In networking, a protocol is a standardized way of doing certain actions and formatting
+                                data so that two or more devices are able to communicate with and understand each
+                                other.
+                                There are protocols for sending packets between devices on the same network (Ethernet),
+                                for sending packets from network to network (IP), for ensuring those packets
+                                successfully
+                                arrive in order (TCP), and for formatting data for websites and applications (HTTP). In
+                                addition to these foundational protocols, there are also protocols for routing, testing,
+                                and
+                                encryption. And there are alternatives to the protocols listed above for different types
+                                of
+                                content - for instance, streaming video often uses UDP instead of TCP.
+                            </p>
+                        </section>
+                    </section>
+
+                    <section id="webserver">
+                        <h1>What is a web server and how does it work?</h1>
+                        <p>
+                            A server is a computer that runs applications and services ranging from websites to instant
+                            messaging.
+                            It's called a server because it provides a service to another computer and its user also
+                            known as the client.
+                            Is typically stored in something called a data center with hundreds or thousands of other
+                            servers, all running different services connected to the internet.
+                            A web server is software and hardware that uses HTTP (Hypertext Transfer Protocol) and
+                            other protocols to respond to client requests made over the World Wide Web. The main job
+                            of a web server is to display website content through storing, processing and delivering
+                            webpages to users.
+                        </p>
+                        <img src="../images/pic-1.png" alt="" width="500" class="mx-auto">
+                    </section>
+
+                    <section id="whatarewebsitesandwebpages">
+                        <h1>What are websites and webpages?</h1>
+                        <section id="whatisawebsite">
+                            <h2>What is a Website?</h2>
+                            <p>
+                                A website is a combination or collection of webpages grouped together, often handled by
+                                a person or an organisation, which can be accessed anywhere and anytime by anyone via
+                                the internet. This is also a good method to market the businesses and help
+                                them grow well. Al these pages are linked together using the hyperlinks. Websites can
+                                also
+                                be either static or interactive. In the meantime, some popular categories of
+                                websites are affiliate websites, e-commerce websites, dating websites, social networking
+                                websites and more.
+                            </p>
+                        </section>
+                        <section id="whatisawebpage">
+                            <h2>What is a Webpage?</h2>
+                            <p>
+                                Webpage, in the meanwhile, is a single document or page that is displayed in web
+                                browsers
+                                like the Firefox, Google Chrome, Opera and so on. This is used to make up the World Wide
+                                Web (WWW) and is used chiefly to sell products and services to users or visitors. A
+                                unique
+                                URL address is also attached to the webpages and is used to render or access that
+                                particular page. Webpages can also be either static or dynamic.
+                            </p>
+                        </section>
+                    </section>
+
+                    <section id="webbrowser">
+                        <h1>What is a web browser and how does it work?</h1>
+                        <p>
+                            A web browser takes you anywhere on the internet. It retrieves information from other parts
+                            of the web and displays it on your desktop or mobile device. The information is transferred
+                            using the Hypertext Transfer Protocol, which defines how text, images and video are
+                            transmitted on the web.
+                            When the web browser fetches data from an internet connected server, it uses a piece of
+                            software called a rendering engine to translate that data into text and images. This data is
+                            written in Hypertext Markup Language (HTML) and web browsers read this code to create
+                            what we see, hear and experience on the internet.
+                        </p>
+                    </section>
+
+                    <section id="webhosting">
+                        <h1>Web hosting</h1>
+                        <p>
+                            A web hosting service is a type of Internet hosting service that hosts websites for clients,
+                            i.e.
+                            it offers the facilities required for them to create and maintain a site and makes it
+                            accessible on the World Wide Web. Companies providing web hosting services are
+                            sometimes called web hosts.
+                        </p>
+                        <section id="webhostingwork">
+                            <h2>
+                                How Does Web Hosting Work?
+                            </h2>
+                            <p>
+                                When you set up an online business, you have a series of files, images, and HTML code
+                                that
+                                make up your website. These files take up space and need a place to live. Without an
+                                online
+                                home, your files would just sit on your computer and no one would ever see them. A
+                                hosting
+                                provider will provide a place on a web server to store all of your files and are
+                                responsible
+                                for delivering the files of your website as soon as a browser makes a request by typing
+                                in
+                                your domain name.
+                            </p>
+                        </section>
+                        <section id="domain">
+                            <h2>What is a Domain Name?</h2>
+                            <p>if you are renting space at a physical location for your business, you give customers.
+                                your
+                                street address so they can find you. If you are renting space on the internet, you give
+                                customers your domain name.
+                                Whenever someone types in your domain name, it is converted into an IP address. The
+                                hosting company then locates all the files connected to your IP address and returns all
+                                of
+                                the pictures, videos, and words that make up your website.</p>
+                        </section>
+                        <section id="hostingprovider">
+                            <h2>How to Choose a Hosting Provider?</h2>
+                            <p>When selecting a provider it is important to consider the different types of hosting
+                                services
+                                that are offered. Here are a few things to consider when determining where vou would
+                                like
+                                to host your site.
+                            </p>
+                            <ul>
+                                <li>What type of website are you building? eCommerce, blog, portfolio, etc.</li>
+                                <li>Based on the type website, what is the bandwidth needed to run your site</li>
+                                <li>Can you create email addresses for vour domain?</li>
+                                <li>What type of hosting options are available?</li>
+                                <li>Do they provide SSL Certificates?</li>
+                            </ul>
+                        </section>
+                        <section id="typesofwebhosting">
+                            <h2>Types of Web Hosting</h2>
+                            <ol>
+                                <li>Shared Hosting</li>
+                                <li>Dedicated Hosting</li>
+                                <li>VPS Hosting</li>
+                                <li>Cloud Hosting</li>
+                            </ol>
+                            <h3>Shared Hosting</h3>
+                            <p>
+                                Shared hosting is the most common type of web hosting and is suitable for most online
+                                business owners. With shared hosting, several customers share storage space on one
+                                powerful server. There are several advantages to shared hosting including:
+                            <ul>
+                                <li>Affordability - It's much cheaper to share the space on a server than to rent the
+                                    entire
+                                    machine.</li>
+                                <li>Ease of use- Your server is preconfigured, well-organized, easy to use, and your
+                                    hosting
+                                    company does all the maintenance and security updates for you.</li>
+                            </ul>
+                            </p>
+                            <h3>Dedicated Hosting</h3>
+                            <p>
+                                Rather than sharing space, you get a server all to yourself if you choose a dedicated
+                                hosting
+                                package. Advantages to dedicated hosting include:
+                            <ul>
+                                <li>Customization - You can customize the software and hardware to meet your individual
+                                    needs
+                                </li>
+                                <li>Unlimited Resources- Since you don't share the server with anyone, all the storage
+                                    space
+                                    is
+                                    yours.</li>
+                                <li>Full control - You can configure the setup however you'd like.</li>
+                            </ul>
+                            </p>
+                            <h3>VPS Hosting</h3>
+                            <p>
+                                Virtual Private Server (VPS) hosting includes all the features of a dedicated server,
+                                but at
+                                the price point of a shared server. Here are some of the top reasons VPS hosting might
+                                be
+                                a great fit:
+                            <ul>
+                                <li>Functionality - VPS hosting is built on a cPanel and supports easy navigation with
+                                    several
+                                    intuitive tools.</li>
+                                <li>One-click features - You have access to one-click installs of WordPress, Magento,
+                                    and
+                                    Drupal.
+                                </li>
+                                <li>Easy site navigation - The clean interface makes site management a cinch.</li>
+                            </ul>
+                            </p>
+                        </section>
+                        <section id="cloudhosting">
+                            <h2>Cloud Hosting</h2>
+                            <p>Cloud hosting is often considered the most reliable of all of the services. Rather than
+                                relying
+                                on disk space of a single server, it pulls its power from several resources, making sure
+                                you
+                                never have any downtime. Other benefits include:
+                            <ul>
+                                <li>
+                                    Scalability - You can add to your cloud space at any time.
+                                </li>
+                                <li>
+                                    Unmetered bandwidth - You don't have to worry about your site going down due to a
+                                    server
+                                    failure.
+                                </li>
+                            </ul>
+                            </p>
+                        </section>
+                    </section>
+
+                    <section id="internetprotocols">
+                        <h1>Internet Protocols</h1>
+                        <p>
+                            The Internet Protocol (IP) is a protocol, or set of rules, for routing and addressing
+                            packets of
+                            data so that they can travel across networks and arrive at the correct destination. Data
+                            traversing the Internet is divided into smaller pieces, called packets. IP information is
+                            attached to each packet, and this information helps routers to send packets to the right
+                            place. Every device or domain that connects to the Internet is assigned an IP address, and
+                            as packets are directed to the IP address attached to them, data arrives where it is needed.
+                            Once the packets arrive at their destination, they are handled differently depending on
+                            which transport protocol is used in combination with IP. The most common transport
+                            protocols are TCP and UDP.
+                        </p>
+                    </section>
+
+                    <section id="http">
+                        <h1>HTTP</h1>
+                        <p>
+                            Hypertext Transfer Protocol (HTTP) is an application-layer protocol for transmitting
+                            hypermedia
+                            documents, such as HTML. It was designed for communication between web browsers and web
+                            servers,
+                            but
+                            it can also be used for other purposes. HTTP follows a classical client-server model, with a
+                            client
+                            opening a connection to make a request, then waiting until it receives a response. HTTP is a
+                            stateless protocol, meaning that the server does not keep any data (state) between two
+                            requests.
+                        </p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>HTTP Methods</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>GET</td>
+                                    <td>The client requests a resource on the web server</td>
+                                </tr>
+                                <tr>
+                                    <td>POST</td>
+                                    <td>The client submits data to a resource on the web server</td>
+                                </tr>
+                                <tr>
+                                    <td>PUT</td>
+                                    <td>The client replaces a resource on the web server</td>
+                                </tr>
+                                <tr>
+                                    <td>DELETE</td>
+                                    <td>The client deletes a resource on the web server</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section id="frameworksandlibraries">
+                        <h1>Frameworks and Libraries</h1>
+                        <section id="whatisframework">
+                            <h2>What is Framework?</h2>
+                            <p>Frameworks are program scaffolds that supply the blueprint instead of a finished product.
+                                As a result, a framework gives the fundamental structure while indicating the required
+                                customization from the coder. The framework defines the workflow of a software
+                                application, informs the developer of what he needs, and invokes the developer's code
+                                when necessary.</p>
+                        </section>
+                        <section id="whatislibrary">
+                            <h2>What is Library?</h2>
+                            <p>A library is a group of pre-written codes that make jobs easier to complete. A library is
+                                a
+                                collection of pre-defined methods and classes that developers can use to ease their work
+                                and accelerate development. As a result, developers do not need to write code to achieve
+                                specific features. Most programming languages include standard libraries, but developers
+                                can create their own customized libraries.</p>
+                        </section>
+                    </section>
+
+                    <section id="webapplicationandwebsites">
+                        <h1>Web Application & Website</h1>
+                        <section id="webapplication">
+                            <h2>Web Application</h2>
+                            <p>Web application is a piece of software that can be accessed by the
+                                browser. A Browser is an application that is used to browse the internet. Web
+                                application
+                                needs authentication. The web application uses a combination of server-side scripts and
+                                client-side scripts to present information. It requires a server to manage requests from
+                                the
+                                users.
+                                Example: Google Apps, Amazon, YouTube</p>
+                        </section>
+                        <section id="website">
+                            <h2>Website</h2>
+                            <p>Website is a collection of related web pages that contains images, text, audio,
+                                video, etc. It can be consist of one page, two pages, and n number of pages. Awebsite
+                                provides visual and text content that users can view and read. To view a website
+                                requires
+                                a browser(Chrome, Firefox). There are many types of websites like Archive website, Blog,
+                                Community website, etc.</p>
+                        </section>
+                    </section>
+
+                    <section id="whatisanapi">
+                        <h1>What is an API Application Programming Interface?</h1>
+                        <p>
+                            The term API, also known as Application Programming Interface, is a set of protocols and
+                            definitions that can allow one application to communicate with the other application. It is
+                            a computing interface that is being used to define interactions between various software
+                            intermediaries. It will define the kinds of requests and calls that can be made. It is an
+                            information gateway that will allow the software and services' backend to communicate
+                            with each other.
+                        </p>
+                    </section>
+
+                    <section id="whatisanide">
+                        <h1>What is an IDE?</h1>
+                        <p>
+                            An IDE, or Integrated Development Environment, enables programmers to consolidate the
+                            different aspects of writing a computer program. IDEs increase programmer productivity
+                            by combining common activities of writing software into a single application: editing
+                            source code, building executables, and debugging.
+                        </p>
+                    </section>
+                </div>
+                <footer>
+                    Developed by thiriwin
+                </footer>
+            </div>
+        </div>
+
+        <div class="pt-20 px-5 col-span-3 border-l-2">
+            <div id="scrollspy1">
+                <ul data-te-nav-list-ref>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#howtheinternetwork">How the internet work?</a>
+                        <ul data-te-nav-list-ref>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#packets">Packets</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#protocols">Protocols</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#webserver">What is a web server and how does it work?</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#whatarewebsitesandwebpages">What are websites and webpages?</a>
+                        <ul data-te-nav-list-ref>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#whatisawebsite">What is a Website?</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#whatisawebpage">What is a Webpage?</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#webbrowser">What is a web browser and how does it work?</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#webhosting">Web Hosting</a>
+                        <ul data-te-nav-list-ref>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#webhostingwork">How Does Web Hosting Work?</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#domain">What is a Domain Name?</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#hostingprovider">How to Choose a Hosting Provider?</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#typesofwebhosting">Types of Web Hosting</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#cloudhosting">Cloud Hosting</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#internetprotocols">Internet Protocols</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#http">HTTP</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#frameworksandlibraries">Frameworks and Libraries</a>
+                        <ul data-te-nav-list-ref>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#whatisframework">What is Framework?</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#whatislibrary">What is Library</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#webapplicationandwebsites">Web Application & Website</a>
+                        <ul data-te-nav-list-ref>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#webapplication">Web Application</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#website">Website</a>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#whatisanapi">What is an API - Application Programming Interface?</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#whatisanide">What is an IDE?</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </main>
+
+
+
+    <!-- footer -->
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- tailwind elements js -->
+    <script type="text/javascript" src="./node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+</body>
+
+</html>

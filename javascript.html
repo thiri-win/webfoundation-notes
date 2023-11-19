@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Foundation</title>
+
+    <!-- tailwindcss -->
+    <link rel="stylesheet" href="dist/main.css">
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+    <script>
+        hljs.highlightAll();
+    </script>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="fixed left-0 right-0 top-0 z-10">
+        <nav
+            class="flex-no-wrap relative flex w-full items-center justify-between bg-[#FBFBFB] py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4">
+            <div class="flex w-full flex-wrap items-center justify-between px-3">
+                <!-- Hamburger button for mobile view -->
+                <button
+                    class="block border-0 bg-transparent px-2 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
+                    type="button" data-te-collapse-init data-te-target="#navbarSupportedContent1"
+                    aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- Hamburger icon -->
+                    <span class="[&>svg]:w-7">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7">
+                            <path fill-rule="evenodd"
+                                d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </span>
+                </button>
+
+                <!-- Collapsible navigation container -->
+                <div class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
+                    id="navbarSupportedContent1" data-te-collapse-item>
+                    <!-- Logo -->
+                    <a class="mb-4 ml-2 mr-5 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
+                        href="#">
+                        <img src="https://tecdn.b-cdn.net/img/logo/te-transparent-noshadows.webp" style="height: 15px"
+                            alt="TE Logo" loading="lazy" />
+                    </a>
+                    <!-- Left navigation links -->
+                    <ul class="list-style-none ml-auto flex flex-col pl-0 lg:flex-row" data-te-navbar-nav-ref>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
+                                href="index.html" data-te-nav-link-ref>Home</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="hypertext.html" data-te-nav-link-ref>HTML</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="cascading.html" data-te-nav-link-ref>CSS</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="javascript.html" data-te-nav-link-ref>Javascript</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="jquery.html" data-te-nav-link-ref>JQuery</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="bootstrap.html" data-te-nav-link-ref>Bootstrap</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="tailwind.html" data-te-nav-link-ref>Tailwindcss</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="alpine.html" data-te-nav-link-ref>Alpinejs</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- main -->
+    <main class="grid grid-cols-12" id="app">
+        <div class="col-span-9">
+            <div data-te-spy="scroll" data-te-target="#scrollspy1" data-te-offset="100"
+                class="relative overflow-auto h-screen scroll-pt-14">
+                <div class="px-8 pt-14 pb-8 ">
+
+                    <section id="whatisjavascript">
+                        <h1>What is JavaScript</h1>
+                        <ul>
+                            <li>JavaScript is a programming language initially designed to interact with elements of web
+                                pages. In web browsers, JavaScript consists of three main parts:</li>
+                            <li>ECMAScript provides the core functionality.</li>
+                            <li>The Document Object Model (DOM) provides interfaces for interacting with elements on web
+                                pages</li>
+                            <li>The Browser Object Model (BOM) provides the browser API for interacting with the web
+                                browser.</li>
+                        </ul>
+                    </section>
+
+                    <section id="variables">
+                        <h1>Variables</h1>
+                        <ul>
+                            <li>A variable is a label that references a value like a number or string. Before using a
+                                variable, you need to declare it.</li>
+                            <li>declare a variable: To declare a variable, you use the var keyword followed by the
+                                variable name as follows: <code>var temp;</code></li>
+                            <li>Initialize a variable: To initialize a variable, you specify the variable name, followed
+                                by an equal sign (=) and a value: <code>var temp = 100;</code></li>
+                            <li>Change a variable: Once you initialize a variable, you can change its value by assigning
+                                a different value. For example: <code>var temp = 150;</code></li>
+                            <li><code>var</code> and <code>let</code> create variables that can be reassigned another
+                                value. </li>
+                            <li><code>const</code> creates "constant" variables that cannot be reassigned another value.
+                            </li>
+                            <li>An undefined variable is a variable that has been declared but not initialized while an
+                                undeclared variable is variable that has not been declared.</li>
+                            <li>Use the const keyword to define a readonly reference to a value.</li>
+                            <li>A constant holds a value that doesn't change. </li>
+                            <li>To declare a constant, you use the const keyword. When defining a constant, you need to
+                                initialize it with a value. For example: <code>const number = 10;</code></li>
+                        </ul>
+                    </section>
+
+                    <section id="datatypes">
+                        <h1>Data Types</h1>
+                        <p>JavaScript is a dynamically typed language. It means that a variable doesn't associate with a
+                            type. In other words, a variable can hold a value of different types. For example:</p>
+                        <h2>primitive data types:</h2>
+                        <ul>
+                            <li>number</li>
+                            <li>boolean</li>
+                            <li>undefined</li>
+                            <li>null</li>
+                            <li>string</li>
+                        </ul>
+                        <h2>complex data types:</h2>
+                        <ul>
+                            <li>object</li>
+                        </ul>
+                    </section>
+
+                    <section id="number">
+                        <h1>Number</h1>
+                        <ul>
+                            <li>JavaScript uses the number type to represent both integers and floating-point values.
+                            </li>
+                            <li>Technically, the JavaScript number type uses the IEEE-754 format.</li>
+                            <li>decimal integer: let number = 100; // 100</li>
+                            <li>octal numbers: let number = 071 // 57</li>
+                            <li>hexadecimal number: let number = 0X1a; // 26</li>
+                            <li>floating numbers: let number = 0.99 // 0.99</li>
+                            <li>big number: let number = 3.14e7; // 31400000</li>
+                            <li>small number: let number = 5e-7; // 0.0000005</li>
+                            <li>big integer: JavaScript introduced the bigint type starting in ES2022. The bigint type
+                                stores whole numbers whose values are greater than 253 - 1.</li>
+                            <li>A big integer literal has the n character at the end of an integer literal like this:
+                            </li>
+                            <li>big integer: let views = 9007199254740991n;</li>
+                            <li>you can declare a variable that holds number as follows:</li>
+                            <li>let number = new Number(100);</li>
+                            <li>let number = 200</li>
+                            <li>number properties:</li>
+                            <li>MAX_VALUE : Number.MAX_VALUE // 1.7976931348623157e+308 </li>
+                            <li>MIN_VALUE: Number.MIN_VALUE //5e-324 </li>
+                            <li>Number.POSITIVE_INFINITY // Infinity </li>
+                            <li>Number.NEGATIVE_INFINITY // -Infinity</li>
+                            <li>number methods:</li>
+                            <li>toExponential()</li>
+                            <li>toFixed()</li>
+                            <li>toLocaleString()</li>
+                            <li>toPrecision()</li>
+                            <li>toString()</li>
+                            <li>valueOf()</li>
+                            <li>numeric separator: The numeric separator allows you to create a visual separation
+                                between groups of digits by using underscores (_) as separators.</li>
+                            <li>const amount = 1_000_000_000;</li>
+                            <li>JavaScript allows you to use numeric separators for both integer and floating-point
+                                numbers.</li>
+                            <li>Use underscores (_) as the numeric separators to create a visual separation between
+                                groups of digits.</li>
+                        </ul>
+                    </section>
+
+                    <section id="boolean">
+                        <h1>Boolean</h1>
+                        <ul>
+                            <li><strong>Boolean primitive type:</strong> JavaScript provides a Boolean primitive type
+                                that has two values
+                                of true and false.</li>
+                            <li><strong>Boolean object:</strong> In addition to the boolean primitive type, JavaScript
+                                also provides you
+                                with the global Boolean() function, with the letter B in uppercase, to cast a value of
+                                another type to boolean.</li>
+                        </ul>
+                        <pre>
+                            <code>
+                                let a = Boolean('Hi');
+                                console.log(a); //true
+                                console.log(typeof(a)); // boolean
+                            </code>
+                        </pre>
+                        <ul>
+                            <li>The Boolean is also a wrapper object of the Boolean primitive type. It means that when
+                                you pass either true or false to the Boolean constructor, it'll create a Boolean object.
+                            </li>
+                            <li>To get the primitive value back, you call the valueOf() method of the Boolean object.
+                            </li>
+                        </ul>
+                        <pre>
+                            <code>
+                                let b = new Boolean(false);
+                                console.log(b.valueOf()); //false
+                            </code>
+                        </pre>
+                    </section>
+
+                    <section id="string">
+                        <h1>String</h1>
+                        <ul>
+                            <li>Syntax : var val = new String(string);</li>
+                            <li>JavaScript strings are primitive values. Also, strings are immutable. It means that if
+                                you modify a string, you will always get a new string. The original string doesn't
+                                change.</li>
+                            <li>
+                                To create literal strings, you use either single quotes (') or double quotes (") like
+                                this:
+                                <pre>
+                                    <code>
+                                        let str = "Hi";
+                                        let greeting = "Hello";
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>
+                                ES6 introduced template literals that allow you to define a string backtick (`)
+                                characters:
+                                <pre>
+                                    <code>
+                                        let name = `John`;
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>
+                                The template literals allow you to use the single quotes and double quotes inside a
+                                string without the need of escaping them.
+                                <pre>
+                                    <code>
+                                        let message = `"I'm good". She said"`;
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>
+                                Also, you can place the variables and expressions inside a template literal. JavaScript
+                                will replace the variables with their value in the string. This is called string
+                                interpolation. For example:
+                                <pre>
+                                    <code>
+                                        let name = 'John';
+                                        let message = `Hi, I'm ${name}`;
+                                        console.log(message); // Hi, I'm John
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>
+                                Escaping special characters: To escape special characters, you use the backslash
+                                <code>\</code> character. For example:
+                            </li>
+                            <li>
+                                Windows line break: <code>'\r\n'</code>
+                            </li>
+                            <li>
+                                Unix line break: <code>'\n'</code>
+                            </li>
+                            <li>
+                                Tab: <code>'\t'</code>
+                            </li>
+                            <li>
+                                Backslash <code>'\'</code>
+                            </li>
+                            <li>
+                                Concatenating strings via <code>"+"</code> operator: To concatenate two or more
+                                strings,you use the <code>+</code> operator:
+                                <pre>
+                                    <code>
+                                        let name = "John";
+                                        let str = 'Hello' + name;
+                                        console.log(str); // "Hello John"
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>
+                                If you want to assemble a string piece by piece, you can use the <code>+=</code>
+                                operator:
+                                <pre>
+                                    <code>
+                                        let className = 'btn';
+                                        className += ' btn-primary';
+                                        className += ' none';
+                                        console.log(className); // btn btn-primary none
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>
+                                Comparing strings : To compare two strings, you use comparison operators such as
+                                <code>&gt;</code>, <code>>=</code>, <code>&lt;</code>, <code>&lt;=</code>, and
+                                <code>==</code> operators.
+                            </li>
+                            <li>
+                                The comparison operators compare strings based on the numeric values of the characters.
+                                And it may return the string order that is different from the one used in dictionaries.
+                                <pre>
+                                    <code>
+                                        let result = 'a' < 'b';
+                                        console.log(result); // true
+                                    </code>
+                                </pre>
+                                <pre>
+                                    <code>
+                                        let result = 'a' < 'B';
+                                        console.log(result); // false
+                                    </code>
+                                </pre>
+                            </li>
+                        </ul>
+                        <section id="stringproperties">
+                            <h2>String Properties</h2>
+                            <ul>
+                                <li>string.length</li>
+                                <li>string[0]</li>
+                            </ul>
+                        </section>
+                        <section id="stringmethods">
+                            <h2>String Methods</h2>
+                            <ul>
+                                <li>charAt()</li>
+                                <li>concat()</li>
+                                <li>indexOf()</li>
+                                <li>lastIndexOf()</li>
+                                <li>match()</li>
+                                <li>search()</li>
+                                <li>slice()</li>
+                                <li>split()</li>
+                                <li>substr()</li>
+                                <li>substring()</li>
+                                <li>toLowerCase()</li>
+                                <li>toUpperCase()</li>
+                                <li>valueOf()</li>
+                                <li>trim()</li>
+                                <li>trimStart()</li>
+                                <li>trimEnd()</li>
+                                <li>replace()</li>
+                                <li>replaceAll()</li>
+                                <li>startsWith()</li>
+                                <li>endsWith()</li>
+                                <li>toString(): Note that the toString() method doesn't work for undefined and null.
+                                </li>
+
+                            </ul>
+                        </section>
+                    </section>
+
+                    <section id="object">
+                        <h1>Objects</h1>
+                        <ul>
+                            <li>JavaScript is an Object Oriented Programming (OOP) language. A programming language can
+                                be called object-oriented if it provides four basic capabilities to developers -</li>
+                            <li><strong>Encapsulation</strong> - the capability to store related information, whether
+                                data or methods, together in an object.</li>
+                            <li><strong>Aggregation</strong> - the capability to store one object inside another object.
+                            </li>
+                            <li><strong>Inheritance</strong> - the capability of a class to rely upon another class (or
+                                number of classes) for some of its properties and methods.</li>
+                            <li><strong>Polymorphism</strong> - the capability to write one function or method that
+                                works in a variety of different ways.</li>
+                            <li>Objects are composed of attributes. If an attribute contains a function, it is
+                                considered to be a method of the object, otherwise the attribute is considered a
+                                property.</li>
+                        </ul>
+                        <section id="objectproperties">
+                            <h2>Object Properties</h2>
+                            <ul>
+                                <li>Object properties can be any of the three primitive data types, or any of the
+                                    abstract data types, such as another object. </li>
+                                <li>Object properties are usually variables that are used internally in the object's
+                                    methods, but can also be globally visible variables that are used throughout the
+                                    page.</li>
+                                <li>In JavaScript, an object is an unordered collection of key-value pairs. Each
+                                    key-value pair is called a property.</li>
+                                <li>The key of a property can be a string. And the value of a property can be any value,
+                                    e.g., a string, a number, an array, and even a function.</li>
+                            </ul>
+                        </section>
+                        <section id="objectmethods">
+                            <h2>Object Methods</h2>
+                            <ul>
+                                <li>Methods are the functions that let the object do something or let something be done
+                                    to it.</li>
+                                <li>There is a small difference between a function and a method - at a function is a
+                                    standalone unit of statements and a method is attached to an object and can be
+                                    referenced by this keyword.</li>
+                                <li>Methods are useful for everything from displaying the contents of the object to the
+                                    screen to performing complex mathematical operations on a group of local properties
+                                    and parameters.</li>
+                            </ul>
+                        </section>
+                        <section id="howtocreateanobject">
+                            <h2>how to create an object</h2>
+                            <ul>
+                                <li>
+                                    syntax
+                                    <pre>
+                                        <code>
+                                            let book = new Object();
+                                        </code>
+                                    </pre>
+                                </li>
+                                <li>
+                                    JavaScript provides you with many ways to create an object. The most commonly used
+                                    one is to use the object literal notation.
+                                    <pre>
+                                        <code>
+                                            let empty = {};
+                                        </code>
+                                    </pre>
+                                </li>
+                                <li>
+                                    To create an object with properties, you use the key:value within the curly braces.
+                                </li>
+                                <li>
+                                    The person object has two properties firstName and lastName with the corresponding
+                                    values 'John' and 'Doe'.
+                                </li>
+                                <li>
+                                    When an object has multiple properties, you use a comma (,).
+                                    <pre>
+                                        <code>
+                                            let person = {
+                                                firstName: "John",
+                                                lastName: "Doe",
+                                            }
+                                        </code>
+                                    </pre>
+                                </li>
+                            </ul>
+                        </section>
+                        <section id="accessingproperties">
+                            <h2>Accessing properties</h2>
+                            <ul>
+                                <li>
+                                    To access a property of an object, you use one of two notations: the dot notation
+                                    and array-like notation.
+                                </li>
+                                <li>
+                                    The dot notation( . )
+                                    <pre>
+                                        <code>
+                                            // objectName.propertyName
+                                            console.log(person.firstName);
+                                            console.log(person.lastName);
+                                        </code>
+                                    </pre>
+                                </li>
+                                <li>
+                                    Array-like notation([])
+                                    <pre>
+                                        <code>
+                                            // objectName['propertyName']
+                                            console.log(person['firstName']);
+                                            console.log(person['lastName']);
+                                        </code>
+                                    </pre>
+                                </li>
+                                <li>
+                                    When a property name contains spaces, you need to place it inside quotes. For
+                                    example, the following address object has the 'building no' as a property:
+                                </li>
+                                <li>
+                                    To access the 'building no' property, you need to use the array-like notation:
+                                </li>
+                                <li>
+                                    If you use the dot notation, you'll get an error:
+                                </li>
+                                <li>
+                                    Note that it is not a good practice to use spaces in the property names of an
+                                    object.
+                                    <pre>
+                                        <code>
+                                            let address = {
+                                                'buliding no' : 3960,
+                                                street: 'North 1st stree',
+                                                state: 'CA',
+                                                country: 'USA'
+                                            }
+                                            console.log(address['building no']);
+                                        </code>
+                                    </pre>
+                                </li>
+                            </ul>
+                        </section>
+                        <section id="modifyingthevalue">
+                            <h2>Modifying the value of a property</h2>
+                            <ul>
+                                <li>
+                                    To change the value of a property, you use the assignment operator (=).
+                                </li>
+                                <li>
+                                    we changed the value of the firstName property of the person object from 'John' to
+                                    'Jane'.
+                                    <pre>
+                                        <code>
+                                            let person = {
+                                                firstName: 'John',
+                                                lastName: 'Doe'
+                                            };
+                                            person.firstName = 'Jane';
+                                            console.log(person): // {firstName: 'Jane', lastName: 'Doe'}
+                                        </code>
+                                    </pre>
+                                </li>
+
+                            </ul>
+                        </section>
+                        <section id="addinganewproperty">
+                            <h2>Adding a new property to an object</h2>
+                            <ul>
+                                <li>
+                                    Unlike objects in other programming languages such as Java and C#, you can add a
+                                    property to an object after object creation.
+                                </li>
+                                <li>
+                                    The following statement adds the age property to the person object and assigns 25 to
+                                    it:
+                                    <pre>
+                                        <code>
+                                            person.age = 25;
+                                        </code>
+                                    </pre>
+                                </li>
+                            </ul>
+                        </section>
+                        <section id="deletingaproperty">
+                            <h2>Deleting a property of an object</h2>
+                            <ul>
+                                <li>
+                                    To delete a property of an object, you use the delete operator:
+                                </li>
+                                <li>
+                                    If you attempt to reaccess the age property, you'll get an undefined value.
+                                    <pre>
+                                        <code>
+                                            //delete objectName.propertyName;
+                                            delete person.age;
+                                        </code>
+                                    </pre>
+                                </li>
+                            </ul>
+                        </section>
+                        <section id="checkingifapropertyexists">
+                            <h2>Checking if a property exists</h2>
+                            <ul>
+                                <li>
+                                    To check if a property exists in an object, you use the in operator:
+                                </li>
+                                <li>
+                                    The in operator returns true if the propertyName exists in the objectName.
+                                    <pre>
+                                        <code>
+                                            let employee = {
+                                                firstName: 'Peter',
+                                                lastName: 'Doe',
+                                                employeeId: 1
+                                            };
+                                            console.log('ssn' in employee); //false
+                                            console.log('emplyeeId' in employee); //true
+                                        </code>
+                                    </pre>
+                                </li>
+                            </ul>
+                        </section>
+                        <section id="objectsummary">
+                            <h2>Summary</h2>
+                            <ul>
+                                <li>
+                                    An object is a collection of key-value pairs.
+                                </li>
+                                <li>
+                                    Use the dot notation ( . ) or array-like notation ([ ]) to access a property of an
+                                    object.
+                                </li>
+                                <li>
+                                    The delete operator removes a property from an object.
+                                </li>
+                                <li>
+                                    The in operator check if a property exists in an object.
+                                </li>
+                            </ul>
+
+                        </section>
+                    </section>
+
+                    <section id="array">
+                        <h1>Arrays</h1>
+                        <ul>
+                            <li>First, an array can hold values of mixed types. For example, you can have an array that
+                                stores elements with the types number, string, boolean, and null.</li>
+                            <li>Second, the size of an array is dynamic and auto-growing. In other words, you don't need
+                                to specify the array size up front.</li>
+                            <li>In JavaScript, an array is an ordered list of values. Each value is called an element
+                                specified by an index:</li>
+                            <li>An array can hold values of mixed types.</li>
+                            <li>JavaScript arrays are dynamic, which means that they grow or shrink as needed.</li>
+                        </ul>
+                        <section id="creatingjavascriptarrays">
+                            <h2>Creating JavaScript arrays</h2>
+                            <ul>
+                                <li>JavaScript provides you with two ways to create an array. </li>
+                                <li>The first one is to use the Array constructor as follows:</li>
+                                <li>let scores = new Array(9,10,8,7,6);</li>
+                                <li>The more preferred way to create an array is to use the array literal notation:</li>
+                                <li>let arrayName = [element1, element2, element3, ...];</li>
+                                <li>The array literal form uses the square brackets [] to wrap a comma-separated list of
+                                    elements.</li>
+                            </ul>
+                        </section>
+                        <section id="accessingjavascriptarrayelements">
+                            <h2>Accessing JavaScript array elements</h2>
+                            <ul>
+                                <li>JavaScript arrays are zero-based indexed. In other words, the first element of an
+                                    array starts at index 0, the second element starts at index 1, and so on.</li>
+                                <li>To access an element in an array, you specify an index in the square brackets []:
+                                </li>
+                            </ul>
+                        </section>
+                        <section id="arrayproperties">
+                            <h2>Array properties</h2>
+                            <ul>
+                                <li>To access an element in an array, you specify an index in the square brackets []:
+                                    arrayName[index]</li>
+                                <li>
+                                    To change the value of an element, you assign that value to the element like this:
+                                    <pre>
+                                        <code>
+                                            let mountains = ['Everest', 'Fuji', 'Nanga Parbat'];
+                                            mountains[2] = 'K2';
+                                            console.log(mountains); //['Everest', 'Fuji', 'K2'];
+                                        </code>
+                                    </pre>
+                                </li>
+                                <li>
+                                    Getting the array size : Typically, the length property of an array returns the
+                                    number of elements. The following example shows how to use the length property:
+                                    <pre>
+                                        <code>
+                                            console.log(mountains.length); //3
+                                        </code>
+                                    </pre>
+                                </li>
+                            </ul>
+                        </section>
+                        <section id="arraymethods">
+                            <h2>Array Methods</h2>
+                            <ul>
+                                <li>push()</li>
+                                <li>unshift()</li>
+                                <li>pop()</li>
+                                <li>shift()</li>
+                                <li>slice()</li>
+                                <li>splice()</li>
+                                <li>toString()</li>
+                                <li>sort()</li>
+                                <li>reverse()</li>
+                                <li>indexOf()</li>
+                                <li>includes()</li>
+                                <li>find()</li>
+                                <li>findIndex()</li>
+                                <li>map()</li>
+                                <li>filter()</li>
+                                <li>reduce()</li>
+                                <li>some()</li>
+                                <li>sort()</li>
+                                <li>forEach()</li>
+                                <li>concat()</li>
+                                <li>of()</li>
+                                <li>join()</li>
+                                <li>Array.isArray()</li>
+                            </ul>
+                        </section>
+                        <section id="arraydestructuring">
+                            <h2>Array Destructuring</h2>
+                            <ul>
+                                <li>
+                                    Prior to ES6, there was no direct way to assign the elements of the returned array
+                                    to multiple variables.
+                                </li>
+                                <li>
+                                    The variables x, y and z will take the values of the first, second, and third
+                                    elements of the returned array.
+                                </li>
+                                <li>
+                                    Note that the square brackets [] look like the array syntax but they are not.
+                                </li>
+                                <li class="list-none">
+                                    <pre>
+                                        <code>
+                                            let [x,y,z] = [70, 80, 90];
+                                            console.log(x); // 70
+                                            console.log(y); // 80
+                                            console.log(z); // 90
+                                        </code>
+                                    </pre>
+                                </li>
+                            </ul>
+                        </section>
+                        <section id="spreadoperator">
+                            <h2>Spread Operator</h2>
+                            <ul>
+                                <li>
+                                    ES6 provides a new operator called spread operator that consists of three dots
+                                    (...). The spread operator allows you to spread out elements of an iterable object
+                                    such as an array, map, or set.
+                                </li>
+                                <li class="list-none">
+                                    <pre>
+                                        <code>
+                                            const odd = [1, 3, 5];
+                                            const combined = [...odd, 2, 4, 6];
+                                            console.log(combined); // [1, 3, 5, 2, 4, 6];
+                                        </code>
+                                    </pre>
+                                </li>
+                            </ul>
+                        </section>
+                    </section>
+
+                    <section id="operator">
+                        <h1>Operator</h1>
+                        <section id="arithemeticoperator">
+                            <h2>Arithmetic Operator</h2>
+                            <table>
+                                <tr>
+                                    <td>addition</td>
+                                    <td>+</td>
+                                </tr>
+                                <tr>
+                                    <td>substraction</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>multiplication</td>
+                                    <td>*</td>
+                                </tr>
+                                <tr>
+                                    <td>division</td>
+                                    <td>/</td>
+                                </tr>
+                                <tr>
+                                    <td>modulus</td>
+                                    <td>%</td>
+                                </tr>
+                                <tr>
+                                    <td>increment</td>
+                                    <td>++</td>
+                                </tr>
+                                <tr>
+                                    <td>decrement</td>
+                                    <td>--</td>
+                                </tr>
+                            </table>
+                        </section>
+                        <section id="comparisonoperator">
+                            <h2>Comparison Operator</h2>
+                            <table>
+                                <tr>
+                                    <td>equal</td>
+                                    <td>==</td>
+                                </tr>
+                                <tr>
+                                    <td>not equal</td>
+                                    <td>!=</td>
+                                </tr>
+                                <tr>
+                                    <td>greater than</td>
+                                    <td> &gt;</td>
+                                </tr>
+                                <tr>
+                                    <td>less than</td>
+                                    <td> &lt;</td>
+                                </tr>
+                                <tr>
+                                    <td>greater than or equal </td>
+                                    <td>&gt;=</td>
+                                </tr>
+                                <tr>
+                                    <td>less than or equal</td>
+                                    <td>&lt;=</td>
+                                </tr>
+                            </table>
+                        </section>
+                        <section id="logicaloperator">
+                            <h2>logical operator</h2>
+                            <table>
+                                <tr>
+                                    <td>and</td>
+                                    <td>&&</td>
+                                </tr>
+                                <tr>
+                                    <td>or</td>
+                                    <td>||</td>
+                                </tr>
+                                <tr>
+                                    <td>not</td>
+                                    <td>!</td>
+                                </tr>
+                            </table>
+                        </section>
+                        <section id="assignmentoperator">
+                            <h2>Assignment Operator</h2>
+                            <table>
+                                <tr>
+                                    <td>assignment</td>
+                                    <td>=</td>
+                                </tr>
+                                <tr>
+                                    <td>add and assign </td>
+                                    <td>+=</td>
+                                </tr>
+                                <tr>
+                                    <td>substract and assign </td>
+                                    <td>-=</td>
+                                </tr>
+                                <tr>
+                                    <td>multiplication and assign </td>
+                                    <td>*=</td>
+                                </tr>
+                                <tr>
+                                    <td>divide and assign </td>
+                                    <td>/=</td>
+                                </tr>
+                                <tr>
+                                    <td>modulus and assign </td>
+                                    <td>%=</td>
+                                </tr>
+                            </table>
+                        </section>
+                        <section id="conditionaloperator">
+                            <h2>conditional operator</h2>
+                            <table>
+                                <tr>
+                                    <td>conditional</td>
+                                    <td>? :</td>
+                                </tr>
+                            </table>
+                        </section>
+                    </section>
+
+                    <section id="controlflow">
+                        <h1>Control Flow</h1>
+                        <ul>
+                            <li>The if statement executes block if a condition is true.</li>
+                            <li class="list-none">
+                                <pre>
+                                    <code>
+                                        if(condition) {
+                                            // statements to execute
+                                        }
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>if...else statement to execute a block if a condition is true and another block
+                                otherwise.</li>
+                            <li class="list-none">
+                                <pre>
+                                    <code>
+                                        if(condition) {
+                                            // statements to execute
+                                        } else {
+                                            // statements to execute
+                                        }
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>if...else...if statement is to check multiple conditions and execute the corresponding
+                                block if a condition is true.</li>
+                            <li class="list-none">
+                                <pre>
+                                    <code>
+                                        if(condition 1) {
+                                            // statements to execute
+                                        } else if (condition 2) {
+                                            // statements to execute
+                                        } else if (condition 2) {
+                                            // statements to execute
+                                        } else {
+                                            // statements to execute
+                                        }
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>you can use a ternary operator instead of the if-else statement.</li>
+                            <li class="list-none">
+                                <pre>
+                                    <code>
+                                        condition ? expressionIfTrue : expressionIfFalse
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>The switch statement evaluates an expression, compares its result with case values, and
+                                executes the statement associated with the matching case value.</li>
+                            <li class="list-none">
+                                <pre>
+                                    <code>
+                                        switch(expression) {
+                                            case 1:
+                                                // statement here;
+                                                break;
+                                            case 2:
+                                                // statement here;
+                                                break;
+                                            case 3:
+                                                // statement here;
+                                                break;
+                                            default:
+                                                // statement here;
+                                        }
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>The JavaScript while statement creates a loop that executes a block as long as a
+                                condition evaluates to true.</li>
+                            <li class="list-none">
+                                <pre>
+                                    <code>
+                                        while(expression) {
+                                            // statement;
+                                        }
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>The do...while loop statement creates a loop that executes a block until a condition
+                                evaluates to false.</li>
+                            <li class="list-none">
+                                <pre>
+                                    <code>
+                                        do {
+                                            // statement;
+                                        } while(expression)
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>The for loop statement creates a loop with three optional expressions.</li>
+                            <li class="list-none">
+                                <pre>
+                                    <code>
+                                        for(initializer; condition; iterator) {
+                                            // statement here;
+                                        }
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>The break statement prematurely terminates a loop such as for, do...while, and while
+                                loop, a switch, or a label statement.</li>
+                            <li>The continue statement terminates the execution of the statement in the current
+                                iteration of a loop such as a for, while, and do…while loop and immediately continues to
+                                the next iteration.</li>
+
+                        </ul>
+                    </section>
+
+                    <section id="function">
+                        <h1>Function</h1>
+                        <ul>
+                            <li>To avoid repeating the same code all over places, you can use a function to wrap that
+                                code and reuse it.</li>
+                            <li>JavaScript provides many built-in functions</li>
+                            <li>To declare a function, you use the function keyword, followed by the function name, a
+                                list of parameters, and the function body.</li>
+                            <li class="list-none">
+                                <pre>
+                                    <code>
+                                        function functionName(parameters) {
+                                            // code
+                                        }
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>To use a function, you need to call it. </li>
+                            <li>Calling a function is also known as invoking a function. </li>
+                            <li>To call a function, you use its name followed by arguments enclosing in parentheses.
+                            </li>
+                            <li class="list-none">
+                                <pre>
+                                    <code>
+                                        functionName(arguments);
+                                    </code>
+                                </pre>
+                            </li>
+                            <li>The terms parameters and arguments are often used interchangeably. However, they are
+                                essentially different.</li>
+                            <li>When declaring a function, you specify the parameters. However, when calling a function,
+                                you pass the arguments that are corresponding to the parameters.</li>
+                            <li>For example, in the say() function, the message is the parameter and the 'Hello' string
+                                is an argument that corresponds to the message parameter.</li>
+                            <li>To specify a return value for a function, you use the return statement followed by an
+                                expression or a value.</li>
+                        </ul>
+                        <section id="anonymousfunction">
+                            <h2>anonymous function</h2>
+                            <ul>
+                                <li>An anonymous function is a function without a name.</li>
+                                <li>Note that if you don't place the anonymous function inside the (), you'll get a
+                                    syntax error. The () makes the anonymous function an expression that returns a
+                                    function object.</li>
+                                <li class="list-none">
+                                    <pre>
+                                        <code>
+                                            (function(){
+                                                // ...
+                                            })
+                                        </code>
+                                    </pre>
+                                </li>
+                                <li>An anonymous function is not accessible after its initial creation. Therefore, you
+                                    often need to assign it to a variable.</li>
+                                <li class="list-none">
+                                    <pre>
+                                        <code>
+                                            let show = function() {
+                                                console.log('anonymous function');
+                                            }
+                                            show();
+                                        </code>
+                                    </pre>
+                                </li>
+                                <li>The anonymous function has no name between the function keyword and parentheses ().
+                                </li>
+                                <li>Because we need to call the anonymous function later, we assign the anonymous
+                                    function to the show variable.</li>
+                                <li>Since the whole assignment of the anonymous function to the show variable makes a
+                                    valid expression, you don't need to wrap the anonymous function inside the
+                                    parentheses ().</li>
+                            </ul>
+                        </section>
+                        <section id="arrowfunction">
+                            <h2>arrow function</h2>
+                            <ul>
+                                <li>ES6 arrow functions provide you with an alternative way to write a shorter syntax
+                                    compared to the function expression.</li>
+                                <li class="list-none">
+                                    <pre>
+                                        <code>
+                                            let add = (x,y) => x+y;
+                                            console.log(add(3,4)); // 7
+                                        </code>
+                                    </pre>
+                                </li>
+                            </ul>
+                        </section>
+                    </section>
+
+                    <section id="documentobjectmodel">
+                        <h1>Document Object Model</h1>
+                        <ul>
+                            <li>The Document Object Model (DOM) is an application programming interface (API) for
+                                manipulating HTML documents.</li>
+                            <li>The DOM represents an HTML document as a tree of nodes. The DOM provides functions that
+                                allow you to add, remove, and modify parts of the document effectively.</li>
+                            <li>Note that the DOM is cross-platform and language-independent ways of manipulating HTML
+                                and XML documents.</li>
+                        </ul>
+                        <section id="selectingelements">
+                            <h2>Selecting Elements</h2>
+                            <ul>
+                                <li>select element by Id : document.getElementById()</li>
+                                <li>select elements by name : getElementsByName()</li>
+                                <li>select elements by tag name : getElementsByTagName()</li>
+                                <li>select elements by class name : getElementsByClassName()</li>
+                                <li>select elements by css selectors : querySelector()querySelectorAll()</li>
+                            </ul>
+                        </section>
+                        <section id="travesingelements">
+                            <h2>Travesing Elements</h2>
+                            <ul>
+                                <li>parent element : The node.parentNode returns the read-only parent node of a
+                                    specified node or null if it does not exist. node.parentNode</li>
+                                <li>sibling element : To get the next sibling of an element, you use the
+                                    nextElementSibling attribute.</li>
+                                <li>To get the previous siblings of an element, you use the previousElementSibling
+                                    attribute.</li>
+                                <li>To get the first child element of a specified element, you use the firstChild
+                                    property of the element.</li>
+                                <li>to get the first child with the Element node only, you can use the firstElementChild
+                                    property:</li>
+                                <li>To get the last child element of a node, you use the lastChild property:</li>
+                                <li>If you want to select only the last child element with the element node type, you
+                                    use the lastElementChild property:</li>
+                                <li>To get a live NodeList of child elements of a specified element, you use the
+                                    childNodes property:</li>
+                                <li>The childNodes property returns all child elements with any node type. To get the
+                                    child element with only the element node type, you use the children property: </li>
+                            </ul>
+                        </section>
+                        <section id="manipulatingelements">
+                            <h2>Manipulating Elements</h2>
+                            <ul>
+                                <li>The document.createElement() accepts an HTML tag name and returns a new Node with
+                                    the Element type.</li>
+                                <li>The appendChild() method allows you to add a node to the end of the list of child
+                                    nodes of a specified parent node.</li>
+                                <li>To get the text content of a node and its descendants, you use the textContent
+                                    property.</li>
+                                <li>The innerText takes the CSS style into account and returns only human-readable text.
+                                </li>
+                                <li>you can also use the textContent property to set the text for a node.</li>
+                                <li>The innerHTML is a property of the Element that allows you to get or set the HTML
+                                    markup contained within the element.</li>
+                                <li>The element.before() method allows you to insert one or more nodes before the
+                                    element. </li>
+                                <li>The element.after() method allows you to insert one or more nodes after the element.
+                                </li>
+                                <li>The parentNode.append() method inserts a set of Node objects or DOMString objects
+                                    after the last child of a parent node.</li>
+                                <li>The prepend() method inserts a set of Node objects or DOMString objects before the
+                                    first child of a parent node,</li>
+                                <li>To replace an HTML element, you use the node.replaceChild() method.</li>
+                                <li>The cloneNode() is a method of the Node interface that allows you to clone an
+                                    element:</li>
+                                <li>To remove a child element of a node, you use the removeChild() method.</li>
+                                <li>To insert a node before another node as a child node of a parent node, you use the
+                                    parentNode.insertBefore() method.</li>
+                            </ul>
+                        </section>
+                        <section id="events">
+                            <h2>Events</h2>
+                            <ul>
+                                <li>mousedown</li>
+                                <li>mouseup</li>
+                                <li>click</li>
+                                <li>dblclick</li>
+                                <li>mousemove</li>
+                                <li>mouseover</li>
+                                <li>mouseout</li>
+                                <li>mouseenter</li>
+                                <li>mouseleave</li>
+                                <li>keydown</li>
+                                <li>keyup</li>
+                                <li>keypress</li>
+                                <li>focus</li>
+                                <li>submit</li>
+                                <li>blur</li>
+                                <li>change</li>
+                                <li>etc…</li>
+                            </ul>
+                        </section>
+                    </section>
+                    <section id="browserobjectmodel">
+                        <h1>Browser Object Model</h1>
+                        <p>The Browser Object Model (BOM) is the core of JavaScript on the web. The BOM provides you
+                            with objects that expose the web browser's functionality.</p>
+                        <section id="window">
+                            <h2>window</h2>
+                            <p>The global object of JavaScript in the web browser is the window object. It
+                                means that all variables and functions declared globally with the var keyword
+                                become the properties and methods of the window object.</p>
+                            <ul>
+                                <li>window.innerWidth</li>
+                                <li>window.innerHeight</li>
+                                <li>window.location</li>
+                                <li>window.location.href</li>
+                                <li>window.location.href</li>
+                                <li>window.location.search</li>
+                                <li>window.open()</li>
+                                <li>window.resizeTo()</li>
+                                <li>window.resizeBy()</li>
+                                <li>window.moveTo(x,y)</li>
+                                <li>window.close()</li>
+                                <li>window.alert()</li>
+                                <li>window.confirm()</li>
+                                <li>window.prompt()</li>
+                                <li>window.setTimeout()</li>
+                                <li>window.setInterval() </li>
+                            </ul>
+                        </section>
+                        <section id="navigator">
+                            <h2>navigator</h2>
+                            <p>The JavaScript Navigator provides information about the web browser and its capabilities. You can reference the Navigator object via the read-only window.navigator property.</p>
+                            <ul>
+                                <li>navigator.appCodeName</li>
+                                <li>navigator.appName</li>
+                                <li>navigator.appVersion</li>
+                                <li>navigator.battery</li>
+                                <li>navigator.cookieEnabled</li>
+                                <li>navigator.geolocation</li>
+                                <li>navigator.userAgent</li>
+                            </ul>
+                        </section>
+                    </section>
+                </div>
+
+                <footer>
+                    Developed by thiriwin
+                </footer>
+
+            </div>
+        </div>
+
+        <div class="pt-20 px-5 col-span-3 border-l-2 h-screen overflow-auto">
+            <div id="scrollspy1">
+                <ul data-te-nav-list-ref>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#whatisjavascript">What is JavaScript</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#variables">Variables</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#datatypes">Data Types</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#number">Number</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#boolean">Boolean</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#string">String</a>
+                        <ul data-te-nav-list-ref>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#stringproperties">String Properties</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#stringmethods">String Methods</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#object">Object</a>
+                        <ul data-te-nav-list-ref>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#objectproperties">Object Properties</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#objectmethods">Object Methods</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#howtocreateanobject">how to create an object</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#accessingproperties">Accessing properties</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#addinganewproperty">Adding a new property to an object</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#deletingaproperty">Deleting a property of an object</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#checkingifapropertyexists">Checking if a property exists</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#objectsummary">Summary</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#array">Arrays</a>
+                        <ul data-te-nav-list-ref>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#creatingjavascriptarrays">Creating JavaScript arrays</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#accessingjavascriptarrayelements">Accessing JavaScript array elements</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#arrayproperties">Array properties</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#arraymethods">Array Methods</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#arraydestructuring">Array Destructuring</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#spreadoperator">Spread Operator</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#operator">Operator</a>
+                        <ul data-te-nav-list-ref>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#arithemeticoperator">Arithmetic Operator</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#comparisonoperator">Comparison Operator</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#logicaloperator">logical operator</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#assignmentoperator">Assignment Operator</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#conditionaloperator">conditional operator</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#controlflow">Control Flow</a>
+                       
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#function">Function</a>
+                        <ul data-te-nav-list-ref>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#anonymousfunction">anonymous function</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#arrowfunction">arrow function</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#documentobjectmodel">Document Object Model</a>
+                        <ul data-te-nav-list-ref>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#selectingelements">Selecting Elements</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#travesingelements">Travesing Elements</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#manipulatingelements">Manipulating Elements</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#events">Events</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#browserobjectmodel">Browser Object Model</a>
+                        <ul data-te-nav-list-ref>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#window">window</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#navigator">navigator</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+
+            </div>
+        </div>
+
+    </main>
+
+
+
+    <!-- footer -->
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- tailwind elements js -->
+    <script type="text/javascript" src="./node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+</body>
+
+</html>

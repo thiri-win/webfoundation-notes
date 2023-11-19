@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Foundation</title>
+
+    <!-- tailwindcss -->
+    <link rel="stylesheet" href="dist/main.css">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="fixed left-0 right-0 top-0 z-10">
+        <nav
+            class="flex-no-wrap relative flex w-full items-center justify-between bg-[#FBFBFB] py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4">
+            <div class="flex w-full flex-wrap items-center justify-between px-3">
+                <!-- Hamburger button for mobile view -->
+                <button
+                    class="block border-0 bg-transparent px-2 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
+                    type="button" data-te-collapse-init data-te-target="#navbarSupportedContent1"
+                    aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- Hamburger icon -->
+                    <span class="[&>svg]:w-7">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7">
+                            <path fill-rule="evenodd"
+                                d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </span>
+                </button>
+
+                <!-- Collapsible navigation container -->
+                <div class="!visible hidden flex-grow basis-[100%] items-center lg:!flex lg:basis-auto"
+                    id="navbarSupportedContent1" data-te-collapse-item>
+                    <!-- Logo -->
+                    <a class="mb-4 ml-2 mr-5 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
+                        href="#">
+                        <img src="https://tecdn.b-cdn.net/img/logo/te-transparent-noshadows.webp" style="height: 15px"
+                            alt="TE Logo" loading="lazy" />
+                    </a>
+                    <!-- Left navigation links -->
+                    <ul class="list-style-none ml-auto flex flex-col pl-0 lg:flex-row" data-te-navbar-nav-ref>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
+                                href="index.html" data-te-nav-link-ref>Home</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="hypertext.html" data-te-nav-link-ref>HTML</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="cascading.html" data-te-nav-link-ref>CSS</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="javascript.html" data-te-nav-link-ref>Javascript</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="jquery.html" data-te-nav-link-ref>JQuery</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="bootstrap.html" data-te-nav-link-ref>Bootstrap</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="tailwind.html" data-te-nav-link-ref>Tailwindcss</a>
+                        </li>
+                        <li class="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                            <a class="text-neutral-500 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+                                href="alpine.html" data-te-nav-link-ref>Alpinejs</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- main -->
+    <main class="grid grid-cols-12" id="app">
+        <div class="col-span-9">
+            <div data-te-spy="scroll" data-te-target="#scrollspy1" data-te-offset="100"
+                class="relative overflow-auto h-screen scroll-pt-14">
+                <div class="px-8 pt-14 pb-8 ">
+
+                    <section id="whatishypertextmarkuplanguage">
+                        <h1>
+                            What is Hyper Text Markup Language?
+                        </h1>
+                        <p>
+                            HTML (HyperText Markup Language) is the most basic building block of the Web. It defines the
+                            meaning and structure of web content. Other technologies besides HTML are generally used to
+                            describe a web page's appearance/ presentation (CSS) or functionality/ behavior
+                            (JavaScript). "Hypertext" refers to links that connect web pages to one another, either
+                            within a single website or between websites. Links are a fundamental aspect of the Web. By
+                            uploading content to the Internet and linking it to pages created by other people, you
+                            become an active participant in the World Wide Web.
+                        </p>
+                        <img src="images/html.png" alt="" width="70%" class="block mx-auto my-4">
+                    </section>
+
+                    <section id="htmlbasic">
+                        <h1>
+                            HTML Basic
+                        </h1>
+                        <p>
+                        <ul>
+                            <li>
+                                <code>&lt;html&gt;</code> : Every HTML code must be enclosed between basic HTML
+                                tags. It
+                                begins with <code>&lt;html&gt;</code> and ends with <code>&lt;/html&gt;</code> tag.
+                            </li>
+                            <li>
+                                <code>&lt;head&gt;</code> : The head tag comes next which contains all the header
+                                information of the web page or documents like the title of the page and other
+                                miscellaneous information. This information is enclosed within the head tag which
+                                opens
+                                with <code>&lt;head&gt;</code> and ends with <code>&lt;/head&gt;</code>. The
+                                contents
+                                will of this tag will be explained in the later sections of the course.
+                            </li>
+                            <li>
+                                <code>&lt;title&gt;</code> : We can mention the title of a web page using the
+                                <code>&lt;title&gt;</code> tag. This is header
+                                information and hence is mentioned within the header tags. The tag begins with
+                                <code>&lt;title&gt;</code> and ends with <code>&lt;/title&gt;</code>.
+                            </li>
+                            <li>
+                                <code>&lt;body&gt;</code> : Next step is the most important of all the tags we have
+                                learned so far. The body tag contains the actual body of the page which will be
+                                visible
+                                to all the users. This opens with <code>&lt;body&gt;</code> and ends with
+                                <code>&lt;/body&gt;</code>. All content enclosed within this tag will be shown on
+                                the
+                                web page be it writings or images or audio or videos or even links. We will see
+                                later in
+                                the section how using various tags we may insert mentioned contents into our web
+                                pages.
+                            </li>
+                        </ul>
+                        </p>
+                    </section>
+
+                    <section id="htmlformattingelements">
+                        <h1>HTML - Formatting elements</h1>
+                        <p>
+                            Formatting elements were designed to display special types of text:
+                        </p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><code>&lt;b&gt;</code></td>
+                                    <td><b>Bold text</b></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;strong&gt;</code></td>
+                                    <td><strong>Important text</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;i&gt;</code></td>
+                                    <td><i>Italic text</i></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;em&gt;</code></td>
+                                    <td><em>Emphasized text</em></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;mark&gt;</code></td>
+                                    <td><mark>Marked text</mark></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;small&gt;</code></td>
+                                    <td><small>Smaller text</small></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;del&gt;</code></td>
+                                    <td><del>Deleted text</del></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;ins&gt;</code></td>
+                                    <td><ins>Inserted text</ins></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;sub&gt;</code></td>
+                                    <td>This is <sub>subscript</sub> text</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;sup&gt;</code></td>
+                                    <td>This is <sup>superscript</sup> text</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section id="htmlphrasetag">
+                        <h1>HTML - Phrase tag</h1>
+                        <p>The HTML phrase tags are special purpose tags, which defines the structural meaning of a
+                            block of text or semantics of text. Following is the list of phrase tags:</p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>&lt;abbr&gt;</td>
+                                    <td><abbr title="">Abbreviation tag</abbr></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;mark&gt;</code></td>
+                                    <td><mark>Marked tag</mark></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;strong&gt;</code></td>
+                                    <td>Strong tag<strong></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;em&gt;</code></td>
+                                    <td><em>Emphasized tag</em></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;dfn&gt;</code></td>
+                                    <td><dfn>Definition tag</dfn></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;blockquote&gt;</code></td>
+                                    <td>
+                                        <blockquote>Quoting tag</blockquote>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;q&gt;</code></td>
+                                    <td><q>Short quote tag</q></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;code&gt;</code></td>
+                                    <td><code>Code tag</code></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;kbd&gt;</code></td>
+                                    <td><kbd>Keyboard tag</kbd></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;address&gt;</code></td>
+                                    <td>
+                                        <address>Address tag</address>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section id="htmlheading">
+                        <h1>HTML - Heading</h1>
+                        <p>
+                            A HTML heading or HTML h tag can be defined as a title or a subtitle which you want to
+                            display on the webpage.h1 is the largest heading tag and h6 is the smallest one. So h1 is
+                            used for most important heading and h6 is used for least important.
+                        </p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><code>&lt;h1&gt;</code></td>
+                                    <td>
+                                        <h1>Heading 1</h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;h2&gt;</code></td>
+                                    <td>
+                                        <h2>Heading 2</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;h3&gt;</code></td>
+                                    <td>
+                                        <h3>Heading 3</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;h4&gt;</code></td>
+                                    <td>
+                                        <h4>Heading 4</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;h5&gt;</code></td>
+                                    <td>
+                                        <h5>Heading 5</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;h6&gt;</code></td>
+                                    <td>
+                                        <h6>Heading 6</h6>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section id="htmlparagraph">
+                        <h1>HTML - Paragraph</h1>
+                        <p>
+                            HTML paragraph or HTML p tag is used to define a paragraph in a webpage. Let's take a simple
+                            example to see how it work. It is a notable point that a browser itself add an empty line
+                            before and after a paragraph. An HTML &lt;p&gt; tag indicates starting of new paragraph.
+                        </p>
+                        <code>&lt;p&gt;This is the first paragph.&lt;/p&gt;</code>
+                        <code>&lt;p&gt;This is the second paragph.&lt;/p&gt;</code>
+                        <code>&lt;p&gt;This is the third paragph.&lt;/p&gt;</code>
+                    </section>
+
+                    <section id="htmltags">
+                        <h1>HTML - Tags</h1>
+                        <p>
+                            HTML tags are like keywords which defines that how web browser will format and display the
+                            content. With the help of tags, a web browser can distinguish between an HTML content and a
+                            simple content. HTML tags contain three main parts: opening tag, content and closing tag.
+                            But some HTML tags are unclosed tags.
+                        </p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td><code>&lt;p&gt;Paragraph Tag&lt;/p&gt;</code></td>
+                                    <td>
+                                        <p> Paragraph Tag </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;h&gt;Heading Tag&lt;/h2&gt;</code></td>
+                                    <td>
+                                        <h2> Heading Tag </h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;b&gt;Bold Tag &lt;/b&gt;</code></td>
+                                    <td><b> Bold Tag </b> </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;i&gt;Italic Tag &lt;/i&gt;</code></td>
+                                    <td><i> Italic Tag </i></td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;u&gt;Underline Tag&lt;/u&gt;</code></td>
+                                    <td><u> Underline Tag</u></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section id="htmltextlinks">
+                        <h1>HTML - Text Links</h1>
+                        <p>
+                            A webpage can contain various links that take you directly to other pages and even specific
+                            parts of a given page. These links are known as hyperlinks.
+                            Hyperlinks allow visitors to navigate between Web sites by clicking on words, phrases, and
+                            images. Thus you can create hyperlinks using text or images available on a webpage.
+                        </p>
+                        <ul>
+                            <li>
+                                <code>&lt;a href="https://hello.com"&gt;"Hello Website&lt;/a&gt;</code>
+                            </li>
+                            <li>
+                                <code>&lt;a href="mailto: contact@hello.com"&gt;"Email To Me&lt;/a&gt;</code>
+                            </li>
+                            <li>
+                                <code>&lt;a href="tel: +959123456"&gt;"Call Me&lt;/a&gt;</code>
+                            </li>
+                            <li>
+                                <code>&lt;a href="myprofile.png” downloa"&gt;"Download Pic&lt;/a&gt;</code>
+                            </li>
+                            <li>
+                                <code>&lt;a href="home.html#heading"&gt;"Heading&lt;/a&gt;</code>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section id="htmltargetattribute">
+                        <h1>HTML - The target Attribute</h1>
+                        <ul>
+                            <li>
+                                <code>_blank</code> : Opens the linked document in a new window or tab.
+                            </li>
+                            <li>
+                                <code>_self</code> : Opens the linked document in the same frame.
+                            </li>
+                            <li>
+                                <code>_parent</code> : Opens the linked document in the parent frame.
+                            </li>
+                            <li>
+                                <code>_top</code> : Opens the linked document in the full body of the window.
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section id="htmlimages">
+                        <h1>HTML - Images</h1>
+                        <p>
+                            You can insert any image in your web page by using &lt;img&gt; tag. The &lt;img&gt; tag is
+                            an empty tag, which means that, it can contain only list of attributes and it has no closing
+                            tag.
+                            The alt attribute is a mandatory attribute which specifies an alternate text for an image,
+                            if the image cannot be displayed.
+                        </p>
+                        <ul>
+                            <li>
+                                <code>&lt;img src ="/images/test.png" alt ="Test Image" /&gt;</code>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section id="htmllist">
+                        <h1>HTML - Lists</h1>
+                        <p>
+                            HTML offers web authors three ways for specifying lists of information. Al lists must
+                            contain one or more list elements. Lists may contain -
+                        </p>
+                        <ul>
+                            <li>
+                                <code>&lt;ul&gt;</code> - An unordered list. This will list items using plain bullets.
+                            </li>
+                            <li>
+                                <code>&lt;ol&gt;</code> - An ordered list. This will use different schemes of numbers to
+                                list your items.
+                            </li>
+                        </ul>
+                        <section id="unorderedlist">
+                            <h2>Unordered List</h2>
+                            <pre>
+                                <code>
+                                    &lt;ul&gt;
+                                        &lt;li&gt;list 1&lt;/li&gt;
+                                        &lt;li&gt;list 2&lt;/li&gt;
+                                        &lt;li&gt;list 3&lt;/li&gt;
+                                        &lt;li&gt;list 4&lt;/li&gt;
+                                        &lt;li&gt;list 5&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                </code>
+                            </pre>
+                        </section>
+                        <section id="orderedlist">
+                            <h2>Ordered List</h2>
+                            <pre>
+                                <code>
+                                    &lt;ol&gt;
+                                        &lt;li&gt;list 1&lt;/li&gt;
+                                        &lt;li&gt;list 2&lt;/li&gt;
+                                        &lt;li&gt;list 3&lt;/li&gt;
+                                        &lt;li&gt;list 4&lt;/li&gt;
+                                        &lt;li&gt;list 5&lt;/li&gt;
+                                    &lt;/ol&gt;
+                                </code>
+                            </pre>
+                        </section>
+                    </section>
+
+                    <section id="htmlmedia">
+                        <h1>HTML - Media</h1>
+                        <section id="htmlvideo">
+                            <h2>Video</h2>
+                            <ul>
+                                <li>
+                                    The HTML <code>&lt;video&gt;</code> element is used to show a video on a web page.
+                                </li>
+                            </ul>
+                            <pre>
+                                <code>
+                                    &lt;video width="500" height="300" controls&gt;
+                                        &lt;source src="movie.mp4" type="video/mp4"&gt;
+                                        &lt;source src="movie.ogg" type="video/ogg"&gt;
+                                        Your browser does not support this video
+                                    &lt;/video&gt;
+                                </code>
+                            </pre>
+                        </section>
+                        <section id="htmlaudio">
+                            <h2>Audio</h2>
+                            <ul>
+                                <li>
+                                    The HTML <code>&lt;audio&gt;</code> element is used to play an audio file on a web
+                                    page.
+                                </li>
+                            </ul>
+                            <pre>
+                                <code>
+                                    &lt;audio controls&gt;
+                                        &lt;source src="happy.ogg" type="type/ogg"&gt;
+                                        &lt;source src="happy.mp3" type="type/mpeg"&gt;
+                                        Your browser does not support this audio.
+                                    &lt;/audio&gt;
+                                </code>
+                            </pre>
+                        </section>
+                        <section id="youtubevideo">
+                            <h2>Youtube Video</h2>
+                            <ul>
+                                <li>
+                                    <code>
+                                        &lt;iframe width="966" height="543"
+                                        src="https://www.youtube.com/embed/oOjtEsVMacY?list=RDMM"&gt;&lt;/iframe&gt;
+                                    </code>
+                                </li>
+                            </ul>
+                        </section>
+                    </section>
+
+                    <section id="htmltable">
+                        <h1>HTML - Tables</h1>
+                        <p>
+                            The HTML tables allow web authors to arrange data like text, images, links, other tables,
+                            etc. into rows and columns of cells.
+                            The HTML tables are created using the <code>&lt;table&gt;</code> tag in which the
+                            <code>&lt;tr&gt;</code> tag is used to create table rows and <code>&lt;td&gt;</code> tag is
+                            used to create data cells. The elements under <code>&lt;td&gt;</code> are regular and left
+                            aligned by default.
+                        </p>
+                        <ul>
+                            <li>
+                                Table heading can be defined using <code>&lt;th&gt;</code> tag.
+                            </li>
+                            <li>
+                                Cellpadding and Cellspacing Attributes
+                            </li>
+                            <li>
+                                <code>&lt;table border = "1" cellpadding= "5"
+                                    cellspacing = "5"&gt;&lt;/table&gt;</code>
+                            </li>
+                            <li>
+                                Colspan and Rowspan Attributes
+                            </li>
+                        </ul>
+                        <pre>
+                            <code>
+                                &lt;table border="1"&gt;
+                                    &lt;tr&gt;
+                                        &lt;th>Column 1&lt;/th&gt;
+                                        &lt;th>Column 2&lt;/th&gt;
+                                        &lt;th>Column 3&lt;/th&gt;
+                                    &lt;/tr&gt;
+                                    &lt;tr&gt;
+                                        &lt;td rowspan="2">Row 1 Cell 1&lt;/td&gt;
+                                        &lt;td>Row 1 Cell 2&lt;/td&gt;
+                                        &lt;td>Row 1 Cell 3&lt;/td&gt;
+                                    &lt;/tr&gt;
+                                    &lt;tr&gt;
+                                        &lt;td>Row 2 Cell 2&lt;/td&gt;
+                                        &lt;td>Row 2 Cell 3&lt;/td&gt;
+                                    &lt;/tr&gt;
+                                    &lt;tr&gt;
+                                        &lt;td colspan="3">Row 3 Cell 1&lt;/td&gt;
+                                    &lt;/tr&gt;
+                                &lt;/table&gt;
+                            </code>
+                        </pre>
+
+                    </section>
+
+                    <section id="htmlforms">
+
+                        <h1>HTML - Forms</h1>
+                        <p>
+                            The HTML form element is used to create HTML Form
+                        </p>
+                        <ul>
+                            <li>
+                                <code>&lt;form&gt;&lt;/form&gt;</code>
+                            </li>
+                        </ul>
+
+                        <section>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>action</td>
+                                        <td>
+                                            <code>
+                                                action(&lt;form action=”login.php”&gt;&lt;/form&gt;)
+                                            </code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>target</td>
+                                        <td>
+                                            <code>
+                                                _blank(&lt;form action=”login.php” target=”_blank”&gt;&lt;/form&gt;)<br>
+                                                _blank(&lt;form action=”login.php” target=”_self”&gt;&lt;/form&gt;)<br>
+                                                _blank(&lt;form action=”login.php”
+                                                target=”_parent”&gt;&lt;/form&gt;)<br>
+                                                _blank(&lt;form action=”login¬¬.php” target=”_top”&gt;&lt;/form&gt;)<br>
+                                            </code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>method</td>
+                                        <td>
+                                            <code>
+                                                &lt;form action=”login.php” method=”get”&gt;&lt;/form&gt;<br>
+                                                &lt;form action=”login.php” method=”post”&gt;&lt;/form&gt;<br>
+                                            </code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>autocomplete</td>
+                                        <td>
+                                            <code>
+                                                &lt;form action=”login.php” autocomplete=”on”&gt;&lt;/form&gt;<br>
+                                                &lt;form action=”login.php” autocomplete=”off”&gt;&lt;/form&gt;<br>
+                                            </code>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <section>
+                            <p>
+                                The HTML &lt;form&gt; element can have one or more following elements:
+                            </p>
+                            <ul>
+                                <li><code>&lt;input&gt;</code></li>
+                                <li><code>&lt;label&gt;</code></li>
+                                <li><code>&lt;select&gt;</code></li>
+                                <li><code>&lt;option&gt;</code></li>
+                                <li><code>&lt;textarea&gt;</code></li>
+                                <li><code>&lt;button&gt;</code></li>
+                                <li><code>&lt;fieldset&gt;</code></li>
+                                <li><code>&lt;legend&gt;</code></li>
+                                <li><code>&lt;output&gt;</code></li>
+                                <li>
+                                    <code>&lt;datalist&gt;</code>
+                                    <pre>
+                                        <code>
+                                            &lt;input list="languages" name="lang"&gt;
+                                            &lt;datalist id="languages"&gt;
+                                                &lt;option value="Javascript">&lt;/option&gt;
+                                                &lt;option value="PHP">&lt;/option&gt;
+                                                &lt;option value="Python">&lt;/option&gt;
+                                                &lt;option value="Java">&lt;/option&gt;
+                                                &lt;option value="C#">&lt;/option&gt;
+                                            &lt;/datalist&gt;
+                                        </code>
+                                    </pre>
+                                </li>
+                                <li>
+                                    <code>&lt;optgroup&gt;</code>
+                                    <pre>
+                                        <code>
+                                            &lt;select name="type"&gt;
+                                                &lt;optgroup label="Backend Developer"&gt;
+                                                    &lt;option value="php"&gt;PHP Developer&lt;/option&gt;
+                                                    &lt;option value="laravel"&gt;Laravel Developer&lt;/option&gt;
+                                                &lt;/optgroup&gt;
+                                                &lt;optgroup label="Frontend Developer"&gt;
+                                                    &lt;option value="react"&gt;React Developer&lt;/option&gt;
+                                                    &lt;option value="vue"&gt;Vue Developer&lt;/option&gt;
+                                                &lt;/optgroup&gt;
+                                            &lt;/select&gt;
+                                        </code>
+                                    </pre>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section id="forminputelements">
+                            <h2>Forms - Input Elements</h2>
+                            <ul>
+                                <li><code>&lt;input type="button"&gt;</code></li>
+                                <li><code>&lt;input type="checkbox"&gt;</code></li>
+                                <li><code>&lt;input type="color"&gt;</code></li>
+                                <li><code>&lt;input type="date"&gt;</code></li>
+                                <li><code>&lt;input type="datetime-local"&gt;</code></li>
+                                <li><code>&lt;input type="email"&gt;</code></li>
+                                <li><code>&lt;input type="file"&gt;</code></li>
+                                <li><code>&lt;input type="hidden"&gt;</code></li>
+                                <li><code>&lt;input type="image" src=”img/photo.jpg” alt=”photo”&gt;</code></li>
+                                <li><code>&lt;input type="month"&gt;</code></li>
+                                <li><code>&lt;input type="number"&gt;</code></li>
+                                <li><code>&lt;input type="password"&gt;</code></li>
+                                <li><code>&lt;input type="radio"&gt;</code></li>
+                                <li><code>&lt;input type="range" min=”10” max=”90” step=”10”&gt;</code></li>
+                                <li><code>&lt;input type="reset"&gt;</code></li>
+                                <li><code>&lt;input type="search"&gt;</code></li>
+                                <li><code>&lt;input type="submit"&gt;</code></li>
+                                <li><code>&lt;input type="tel"&gt;</code></li>
+                                <li><code>&lt;input type="text"&gt;</code></li>
+                                <li><code>&lt;input type="time"&gt;</code></li>
+                                <li><code>&lt;input type="url"&gt;</code></li>
+                                <li><code>&lt;input type="week"&gt;</code></li>
+                            </ul>
+                        </section>
+
+                        <section id="forminputattribute">
+                            <h2>Forms - Input Elements Attribute</h2>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>value</td>
+                                        <td>
+                                            <ul>
+                                                <li><code>&lt;input type="text" value="John"&gt;</code></li>
+                                                <li>specifies an initial value for an input field</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>readonly</td>
+                                        <td>
+                                            <ul>
+                                                <li>&lt;input type="text" value="John" readonly&gt;</li>
+                                                <li>specifies that an input field is read-only.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>disabled</td>
+                                        <td>
+                                            <ul>
+                                                <li>&lt;input type="text" value="John" disabled&gt;</li>
+                                                <li>specifies that an input field should be disabled.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>size</td>
+                                        <td>
+                                            <ul>
+                                                <li>&lt;input type="text" name="firstname" size="20"&gt;</li>
+                                                <li>specifies the visible width, in characters, of an input field.</li>
+                                                <li>The default value for size is 20</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>maxlength</td>
+                                        <td>
+                                            <ul>
+                                                <li>&lt;input type="text" name="firstname" maxlength="5"&gt;</li>
+                                                <li>specifies the maximum number of characters allowed in an input
+                                                    field.
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>min</td>
+                                        <td>
+                                            <ul>
+                                                <li>&lt;input type="date" name="dob" min="1980-11-31"&gt;</li>
+                                                <li>specify the minimum values for an input field.</li>
+                                                <li>min attributes work with the following input types: number, range,
+                                                    date,
+                                                    datetime-local, month, time and week.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>max</td>
+                                        <td>
+                                            <ul>
+                                                <li>&lt;input type="date" name="dob" max="2023-04-01"&gt;</li>
+                                                <li>specify the maximum values for an input field.</li>
+                                                <li>max attributes work with the following input types: number, range,
+                                                    date,
+                                                    datetime-local, month, time and week.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>multiple</td>
+                                        <td>
+                                            <ul>
+                                                <li>&lt;input type="files" name="photos" multiple&gt;</li>
+                                                <li>specifies that the user is allowed to enter more than one value in
+                                                    an
+                                                    input field.</li>
+                                                <li>attribute works with the following input types: email, and file.
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>pattern</td>
+                                        <td>
+                                            <ul>
+                                                <li>&lt;input type="text" name="code" pattern="[A-Za-z]{3}"&gt;
+                                                </li>
+                                                <li>The input pattern attribute specifies a regular expression that the
+                                                    input
+                                                    field's value is checked against, when the form is submitted.</li>
+                                                <li>
+                                                    The pattern attribute works with the following input types: text,
+                                                    date,
+                                                    search, url, tel, email, and password.
+                                                    placeholder <code>&lt;input type="text" name="firstname"
+                                                        placeholder="Enter Your First Name Here..."&gt;</code>
+                                                </li>
+                                                <li>The short hint is displayed in the input field before the user
+                                                    enters a
+                                                    value.</li>
+                                                <li>The placeholder attribute works with the following input types:
+                                                    text,
+                                                    search,
+                                                    url, tel, email, and password.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>required</td>
+                                        <td>
+                                            <ul>
+                                                <li>&lt;input type="text" name="firstname" required&gt;</li>
+                                                <li>The input required attribute specifies that an input field must be
+                                                    filled out
+                                                    before submitting the form.</li>
+                                                <li>The required attribute works with the following input types: text,
+                                                    search,
+                                                    url, tel, email, password, date pickers, number, checkbox, radio,
+                                                    and
+                                                    file.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>step</td>
+                                        <td>
+                                            <ul>
+                                                <li>&lt;input type="number" id="points" name="points"
+                                                    step="3"&gt;</li>
+                                                <li>The input step attribute specifies the legal number intervals for an
+                                                    input
+                                                    field.</li>
+                                                <li>Example: if step="3", legal numbers could be -3, 0, 3, 6,
+                                                    etc.
+                                                </li>
+                                                <li>Tip: This attribute can be used together with the max and min
+                                                    attributes
+                                                    to
+                                                    create a range of legal values.</li>
+                                                <li>The step attribute works with the following input types: number,
+                                                    range,
+                                                    date,
+                                                    datetime-local, month, time and week.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>autofocus</td>
+                                        <td>
+                                            <ul>
+                                                <li>&lt;input type="text" name="firstname" autofocus&gt;</li>
+                                                <li>The input autofocus attribute specifies that an input field should
+                                                    automatically get focus when the page loads.</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>list</td>
+                                        <td>
+                                            <ul>
+                                                <pre>
+                                                <code>
+                                                    &lt;input list="browsers"&gt;
+                                                    &lt;datalist id="browsers"&gt;
+                                                        &lt;option value="Internet Explorer"&gt;
+                                                        &lt;option value="Firefox"&gt;
+                                                        &lt;option value="Chrome"&gt;
+                                                        &lt;option value="Opera"&gt;
+                                                        &lt;option value="Safari"&gt;
+                                                    &lt;/datalist&gt;
+                                                </code>
+                                            </pre>
+                                            </ul>
+
+                                            • The input list attribute refers to a <datalist> element that contains
+                                                pre-defined options for an <input> element.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>autocomplete</td>
+                                        <td>
+                                            <ul>
+                                                <li>
+                                                    <code>
+                                                        &lt;input type="text" name="firstname"
+                                                        autocomplete="off"&gt;
+                                                    </code>
+                                                </li>
+                                                <li>
+                                                    The input autocomplete attribute specifies whether a form or an
+                                                    input field should have autocomplete on or off.
+                                                </li>
+                                                <li>
+                                                    Autocomplete allows the browser to predict the value. When a user
+                                                    starts to type in a field, the browser should display options to
+                                                    fill in the field, based on earlier typed values.
+                                                </li>
+                                                <li>
+                                                    The autocomplete attribute works with &lt;form&gt; and the following
+                                                    &lt;input&gt; types: text, search, url, tel, email, password,
+                                                    datepickers, range, and color.
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                        <section id="formlabelelement">
+                            <h2>Forms - Label Element</h2>
+                            <ul>
+                                <li>
+                                    defines a label for several form elements.
+                                </li>
+                                <li>
+                                    useful for screen-reader users, because the screen-reader will read out loud the
+                                    label when the user focus on the input element.
+                                </li>
+                                <li>
+                                    help users who have difficulty clicking on very small regions (such as radio buttons
+                                    or checkboxes) - because when the user clicks the text within the &lt;label&gt;
+                                    element, it toggles the radio button/checkbox.
+                                </li>
+                                <li>
+                                    The <code>for</code> attribute of the <code>label</code> tag should be equal to the
+                                    <code>id</code> attribute of the <code>input</code> element to bind them together.
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section id="formselectelement">
+                            <h2>Forms - Select Element</h2>
+                            <ul>
+                                <li>The select element defines a drop-down list:</li>
+                                <li>The options elements defines an option that can be selected.</li>
+                                <li>By default, the first item in the drop-down list is selected.</li>
+                                <li>To define a pre-selected option, add the selected attribute to the option: </li>
+                            </ul>
+                            <pre>
+                                <code>
+                                    &lt;select name="programming" id="programming" multiple&gt;
+                                        &lt;option value="php"&gt;PHP&lt;/option&gt;
+                                        &lt;option value="py"&gt;Python&lt;/option&gt;
+                                        &lt;option value="js"&gt;Javascript&lt;/option&gt;
+                                        &lt;option value="mysql"&gt;MySql&lt;/option&gt;
+                                    &lt;/select>
+                                </code>
+                            </pre>
+                        </section>
+
+                        <section id="formtextareaelement">
+                            <h2>Forms - Textarea Element</h2>
+                            <ul>
+                                <li>defines a multi-line input field (a text area):</li>
+                                <li>The rows attribute specifies the visible number of lines in a text area.</li>
+                                <li>The cols attribute specifies the visible width of a text area.</li>
+                                <li><code>&lt;textarea name="" id="" cols="30"
+                                        rows="10"&gt;&lt;/textarea&gt;</code></li>
+                            </ul>
+                        </section>
+
+                        <section id="formbuttonelement">
+                            <h2>Forms - Button Element</h2>
+                            <ul>
+                                <li>defines a clickable button</li>
+                                <li><code>&lt;button type="submit"&gt;Submit&lt;/button&gt;</code></li>
+                            </ul>
+                        </section>
+
+                        <section id="formfieldset">
+                            <h2>Forms - Fieldset and Legend</h2>
+                            <ul>
+                                <li>The fieldset element is used to group related data in a form.</li>
+                                <li>the legend element defines a caption for the fieldset element.</li>
+                                <pre>
+                                    <code>
+                                        &lt;fieldset&gt;
+                                            &lt;legend&gt;Personal Information&lt;/legend&gt;
+                                            &lt;label for="name"&gt;Name:&lt;/label&gt;
+                                            &lt;input type="text" placeholder="Enter Your Name"&gt;
+                                        &lt;/fieldset&gt;
+                                    </code>
+                                </pre>
+                            </ul>
+                        </section>
+
+                    </section>
+
+                </div>
+
+                <footer>
+                    Developed by thiriwin
+                </footer>
+
+            </div>
+        </div>
+
+        <div class="pt-20 px-5 col-span-3 border-l-2">
+            <div id="scrollspy1">
+                <ul data-te-nav-list-ref>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#whatishypertextmarkuplanguage">What is Hyper Text Markup Language?</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#htmlbasic">HTML Basic</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#htmlformattingelements">HTML - Formatting elements</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#htmlphrasetag">HTML - Phrase tag</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#htmlheading">HTML - Heading</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#htmlparagraph">HTML - Paragraph</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#htmltags">HTML - Tags</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#htmltextlinks">HTML - Text Links</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#htmltargetattribute">HTML - The target Attribute</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#htmlimages">HTML - Images</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#htmllist">HTML - Lists</a>
+                        <ul data-te-nav-list-ref>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#unorderedlist">Unordered List</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#orderedlist">Ordered List</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#htmlmedia">HTML - Media</a>
+                        <ul data-te-nav-list-ref>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#htmlvideo">Video</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#htmlaudio">Audio</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#youtubevideo">YouTube Video</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#htmltable">HTML - Tables</a>
+                    </li>
+                    <li>
+                        <a data-te-nav-link-ref data-te-nav-link-active
+                            class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                            href="#htmlforms">HTML - Forms</a>
+                        <ul data-te-nav-list-ref>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#forminputelements">Forms - Input Elements</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#forminputattribute">Forms - Input Attributes</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#formlabelelement">Forms - Label Element</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#formselectelement">Forms - Select Element</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#formtextareaelement">Forms - Textarea Element</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#formbuttonelement">Forms - Button Element</a>
+                            </li>
+                            <li>
+                                <a data-te-nav-link-ref
+                                    class="bg-transparent px-[5px] text-neutral-600 shadow-none dark:text-neutral-200"
+                                    href="#formfieldset">Forms - Fieldset and Legend</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </main>
+
+
+
+    <!-- footer -->
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <!-- tailwind elements js -->
+    <script type="text/javascript" src="./node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+</body>
+
+</html>
